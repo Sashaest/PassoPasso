@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Passo",
+    "slug": "passo",
+    "version": "0.1.0",
+    "scheme": "passo",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "description": "Assistente in italiano per adulti con ADHD: compiti in micro-passi, promemoria insistenti, timer visivo.",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F4EE"
+    },
+    "android": {
+      "package": "it.passo.adhd",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#F7F4EE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.VIBRATE"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "it.passo.adhd"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#E8833A"
+        }
+      ],
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

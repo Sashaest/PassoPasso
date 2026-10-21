@@ -1,0 +1,627 @@
+/* Passo — sito. Font ospitati qui (niente Google Fonts: nessun dato verso terzi). */
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/fredoka.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("fonts/nunito-sans.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("fonts/nunito-sans-italic.woff2") format("woff2");
+  font-weight: 200 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --sfondo: #f7f4ee;
+  --sfondo-2: #ede7dc;
+  --superficie: #fffdf9;
+  --inchiostro: #1f2a44;
+  --inchiostro-2: #2a3756;
+  --testo-soft: #4a5568;
+  --testo-tenue: #6b6458;
+  --accento: #e8833a;
+  --accento-scuro: #a84a16;
+  --successo: #2f6b4f;
+  --bordo: #e3dccf;
+  --raggio: 20px;
+  --max: 1120px;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--sfondo);
+  color: var(--inchiostro);
+  font-family: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fredoka", "Nunito Sans", system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.12;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.01em;
+}
+h1 {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+}
+h2 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+}
+h3 {
+  font-size: 1.3rem;
+}
+p {
+  margin: 0 0 1em;
+}
+a {
+  color: var(--accento-scuro);
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--inchiostro);
+}
+:focus-visible {
+  outline: 3px solid var(--accento);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.salta {
+  position: absolute;
+  left: -9999px;
+}
+.salta:focus {
+  left: 16px;
+  top: 16px;
+  background: var(--inchiostro);
+  color: var(--superficie);
+  padding: 8px 16px;
+  z-index: 10;
+}
+
+.contenitore {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.testata {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(247, 244, 238, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+}
+.testata.scrollata {
+  border-bottom-color: var(--bordo);
+}
+.testata .contenitore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+}
+.marchio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--inchiostro);
+  text-decoration: none;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.marchio img {
+  width: 36px;
+  height: 36px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav a:not(.bottone) {
+  color: var(--inchiostro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.nav a:not(.bottone):hover {
+  color: var(--accento-scuro);
+}
+@media (max-width: 760px) {
+  .nav a:not(.bottone) {
+    display: none;
+  }
+}
+
+/* Bottoni */
+.bottone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 26px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--accento);
+  color: var(--inchiostro);
+  font: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.bottone:hover {
+  background: #f09450;
+  color: var(--inchiostro);
+  transform: translateY(-1px);
+}
+.bottone.scuro {
+  background: var(--inchiostro);
+  color: var(--superficie);
+}
+.bottone.scuro:hover {
+  background: var(--inchiostro-2);
+  color: var(--superficie);
+}
+.bottone.piccolo {
+  min-height: 44px;
+  padding: 0 20px;
+}
+.bottone[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* Hero */
+.hero {
+  padding: 56px 0 72px;
+}
+.hero .contenitore {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+.occhiello {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accento-scuro);
+  margin-bottom: 16px;
+}
+.hero h1 .evidenza {
+  color: var(--accento-scuro);
+}
+.hero .lead {
+  font-size: 1.25rem;
+  color: var(--testo-soft);
+  max-width: 34em;
+}
+.nota {
+  font-size: 0.95rem;
+  color: var(--testo-tenue);
+}
+@media (max-width: 900px) {
+  .hero .contenitore {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Telefono con screenshot reale */
+.telefono {
+  position: relative;
+  width: min(320px, 82vw);
+  margin: 0 auto;
+  border-radius: 44px;
+  padding: 12px;
+  background: var(--inchiostro);
+  box-shadow: 0 30px 60px -20px rgba(31, 42, 68, 0.45);
+}
+.telefono img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 34px;
+  background: var(--sfondo);
+}
+.telefono::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 72px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Form lista d'attesa */
+.iscrizione {
+  margin-top: 28px;
+  max-width: 540px;
+}
+.iscrizione .riga {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.iscrizione input[type="email"] {
+  flex: 1 1 240px;
+  min-height: 52px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--bordo);
+  background: var(--superficie);
+  color: var(--inchiostro);
+  font: inherit;
+  font-size: 1rem;
+}
+.iscrizione input[type="email"]:focus-visible {
+  border-color: var(--accento);
+}
+.consenso {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--testo-soft);
+}
+.consenso input {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  accent-color: var(--accento-scuro);
+  flex: none;
+}
+.trappola {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.esito {
+  margin-top: 12px;
+  font-weight: 700;
+  min-height: 1.6em;
+}
+.esito.ok {
+  color: var(--successo);
+}
+.esito.errore {
+  color: #a33a2e;
+}
+
+/* Sezioni */
+section {
+  padding: 88px 0;
+}
+.sezione-alt {
+  background: var(--sfondo-2);
+}
+.sezione-scura {
+  background: var(--inchiostro);
+  color: var(--superficie);
+}
+.sezione-scura .occhiello {
+  color: var(--accento);
+}
+.sezione-scura p {
+  color: #c9d1e0;
+}
+.intestazione {
+  max-width: 720px;
+  margin-bottom: 44px;
+}
+.intestazione p {
+  color: var(--testo-soft);
+  font-size: 1.15rem;
+}
+
+.griglia-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .griglia-3 {
+    grid-template-columns: 1fr;
+  }
+}
+.carta {
+  background: var(--superficie);
+  border: 1px solid var(--bordo);
+  border-radius: var(--raggio);
+  padding: 28px;
+}
+.carta p {
+  color: var(--testo-soft);
+  margin: 0;
+}
+.carta .icona {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--sfondo-2);
+  color: var(--accento-scuro);
+  margin-bottom: 18px;
+}
+
+/* Funzioni: alternanza testo / screenshot */
+.funzioni {
+  display: grid;
+  gap: 72px;
+}
+.funzione {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.funzione:nth-child(even) .testo-funzione {
+  order: 2;
+}
+.funzione .numero {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accento-scuro);
+}
+.funzione ul {
+  padding-left: 1.2em;
+  color: var(--testo-soft);
+}
+.funzione li {
+  margin-bottom: 6px;
+}
+@media (max-width: 900px) {
+  .funzione {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .funzione:nth-child(even) .testo-funzione {
+    order: 0;
+  }
+}
+
+.elenco-funzioni {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+  margin-top: 48px;
+}
+.elenco-funzioni div {
+  border-left: 3px solid var(--accento);
+  padding-left: 18px;
+}
+.elenco-funzioni p {
+  margin: 0;
+  color: var(--testo-soft);
+}
+.elenco-funzioni strong {
+  color: var(--inchiostro);
+}
+.elenco-funzioni strong {
+  display: block;
+}
+@media (max-width: 760px) {
+  .elenco-funzioni {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Principi */
+.principi {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.principi .carta {
+  background: var(--inchiostro-2);
+  border-color: var(--inchiostro-2);
+}
+.principi .carta h3 {
+  color: var(--superficie);
+}
+.principi .carta p {
+  color: #c9d1e0;
+}
+@media (max-width: 760px) {
+  .principi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Prezzi */
+.prezzi {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 860px;
+}
+.prezzi .carta h3 {
+  font-size: 1.5rem;
+}
+.prezzi .cifra {
+  font-family: "Fredoka", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 8px 0 16px;
+}
+.prezzi ul {
+  padding-left: 1.2em;
+  color: var(--testo-soft);
+  margin: 0;
+}
+.prezzi .in-evidenza {
+  border: 2px solid var(--accento);
+}
+@media (max-width: 760px) {
+  .prezzi {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FAQ */
+.faq {
+  max-width: 820px;
+}
+.faq details {
+  border-bottom: 1px solid var(--bordo);
+  padding: 20px 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.1rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--accento-scuro);
+}
+.faq details[open] summary::after {
+  content: "−";
+}
+.faq details p {
+  margin: 12px 0 0;
+  color: var(--testo-soft);
+}
+
+/* CTA finale */
+.cta-finale {
+  text-align: center;
+}
+.cta-finale .iscrizione {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Footer */
+.piede {
+  padding: 48px 0 56px;
+  border-top: 1px solid var(--bordo);
+  font-size: 0.95rem;
+  color: var(--testo-tenue);
+}
+.piede .contenitore {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.piede nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.piede a {
+  color: var(--testo-soft);
+}
+.avvertenza {
+  max-width: 560px;
+}
+
+/* Pagine legali */
+.documento {
+  max-width: 780px;
+  padding: 56px 24px 88px;
+  margin: 0 auto;
+}
+.documento h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+.documento h2 {
+  font-size: 1.5rem;
+  margin-top: 2em;
+}
+.documento li {
+  margin-bottom: 8px;
+}
+.documento table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 0.95rem;
+}
+.documento th,
+.documento td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--bordo);
+}
+.documento th {
+  background: var(--sfondo-2);
+}
+.tabella-scorrevole {
+  overflow-x: auto;
+}
+.da-completare {
+  background: #fde9c8;
+  color: #6b3a0c;
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.aggiornato {
+  color: var(--testo-tenue);
+}
+
+.sezione-scura .intestazione p {
+  color: #c9d1e0;
+}

@@ -1,0 +1,126 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Passo - backend AI (API HTTP + Lambda + DynamoDB)
+
+Parameters:
+  Stage:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, prod]
+  AnthropicKeyParam:
+    Type: String
+    Default: passo/anthropic-api-key
+    Description: Nome del parametro SSM (SecureString) con la chiave dell'API AI, senza "/" iniziale
+  AiModel:
+    Type: String
+    Default: claude-haiku-5-5
+  DailyFreeLimit:
+    Type: Number
+    Default: 10
+    Description: Richieste AI gratuite al giorno per dispositivo
+  AppKey:
+    Type: String
+    NoEcho: true
+    Default: ""
+    Description: Chiave condivisa con l'app (deterrente, non un segreto forte). Vuota = disattivata
+  AllowedOrigin:
+    Type: String
+    Default: "*"
+    Description: Origine del sito web ammessa dal CORS (es. https://passo-app.it)
+
+Globals:
+  Function:
+    Runtime: nodejs22.x
+    Architectures: [arm64]
+    MemorySize: 256
+    Timeout: 30
+    Tracing: Active
+
+Resources:
+  Table:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub passo-${Stage}
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - { AttributeName: pk, AttributeType: S }
+        - { AttributeName: sk, AttributeType: S }
+      KeySchema:
+        - { AttributeName: pk, KeyType: HASH }
+        - { AttributeName: sk, KeyType: RANGE }
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      SSESpecification:
+        SSEEnabled: true
+
+  Api:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref Stage
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 50
+        ThrottlingRateLimit: 20
+      CorsConfiguration:
+        AllowOrigins: [!Ref AllowedOrigin]
+        AllowMethods: [GET, POST, OPTIONS]
+        AllowHeaders: [content-type, x-passo-device, x-passo-app-key]
+        ExposeHeaders: [x-passo-remaining]
+        MaxAge: 600
+
+  ApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub passo-api-${Stage}
+      Handler: index.handler
+      CodeUri: ./
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref Table
+          ANTHROPIC_KEY_PARAM: !Sub /${AnthropicKeyParam}
+          AI_MODEL: !Ref AiModel
+          DAILY_FREE_LIMIT: !Ref DailyFreeLimit
+          APP_KEY: !Ref AppKey
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref Table
+        - SSMParameterReadPolicy:
+            ParameterName: !Ref AnthropicKeyParam
+        # La SecureString usa la chiave KMS gestita "aws/ssm": la sua policy consente già
+        # la decifratura tramite SSM a chi può leggere il parametro.
+      Events:
+        Salute:
+          Type: HttpApi
+          Properties: { ApiId: !Ref Api, Path: /v1/salute, Method: GET }
+        Spezza:
+          Type: HttpApi
+          Properties: { ApiId: !Ref Api, Path: /v1/spezza, Method: POST }
+        Priorita:
+          Type: HttpApi
+          Properties: { ApiId: !Ref Api, Path: /v1/priorita, Method: POST }
+        ListaAttesa:
+          Type: HttpApi
+          Properties: { ApiId: !Ref Api, Path: /v1/lista-attesa, Method: POST }
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [src/index.ts]
+        External: ["@aws-sdk/*"]
+
+  ApiLogs:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/passo-api-${Stage}
+      RetentionInDays: 30
+
+Outputs:
+  ApiUrl:
+    Description: URL base dell'API da mettere nell'app (EXPO_PUBLIC_API_URL) e nel sito (config.js)
+    Value: !Sub https://${Api}.execute-api.${AWS::Region}.amazonaws.com/${Stage}
+  TableName:
+    Value: !Ref Table

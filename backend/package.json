@@ -1,0 +1,31 @@
+{
+  "name": "passo-backend",
+  "version": "0.1.0",
+  "description": "Backend AI di Passo (AWS Lambda)",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "esbuild src/dev-server.ts --bundle --platform=node --target=node22 --outfile=.dev/server.js --log-level=warning && node .dev/server.js",
+    "test": "vitest run",
+    "typecheck": "tsc",
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --minify --sourcemap --external:@aws-sdk/* --outfile=dist/index.js",
+    "deploy": "sam build && sam deploy"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1154.0",
+    "@aws-sdk/client-ssm": "^3.1154.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^22.20.5",
+    "esbuild": "^0.25.12",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}

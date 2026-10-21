@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Passo — un passo alla volta. L’assistente per adulti con ADHD</title>
+    <meta
+      name="description"
+      content="Passo è l’app in italiano per adulti con ADHD: spezza i compiti in micro-passi con l’AI, ti ricorda le cose con insistenza e ti fa vedere il tempo che passa. Senza sensi di colpa."
+    />
+    <meta name="theme-color" content="#F7F4EE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:title" content="Passo — un passo alla volta" />
+    <meta
+      property="og:description"
+      content="L’assistente in italiano per adulti con ADHD. Compiti in micro-passi, promemoria insistenti, timer visivo."
+    />
+    <meta property="og:image" content="img/og.png" />
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
+    <link rel="preload" href="fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/nunito-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="salta" href="#contenuto">Vai al contenuto</a>
+
+    <header class="testata">
+      <div class="contenitore">
+        <a class="marchio" href="./" aria-label="Passo, pagina iniziale">
+          <img src="img/logo.svg" alt="" width="36" height="36" />
+          Passo
+        </a>
+        <nav class="nav" aria-label="Principale">
+          <a href="#come-funziona">Come funziona</a>
+          <a href="#metodo">Il metodo</a>
+          <a href="#faq">Domande</a>
+          <a class="bottone piccolo scuro" href="#iscriviti">Lista d’attesa</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenuto">
+      <section class="hero" aria-labelledby="titolo-hero">
+        <div class="contenitore">
+          <div>
+            <span class="occhiello">Per adulti con ADHD · in italiano</span>
+            <h1 id="titolo-hero">Un passo <span class="evidenza">alla volta.</span></h1>
+            <p class="lead">
+              Passo spezza i compiti in micro-passi da pochi minuti, ti ricorda le cose con insistenza finché non
+              rispondi e ti fa <em>vedere</em> il tempo che passa. Senza liste che fanno paura, senza sensi di colpa.
+            </p>
+
+            <form class="iscrizione" id="iscriviti" data-lista-attesa data-origine="hero" novalidate>
+              <label for="email-hero" class="nota">Entra nella lista d’attesa per Android:</label>
+              <div class="riga">
+                <input id="email-hero" name="email" type="email" autocomplete="email" placeholder="la-tua@email.it" required />
+                <button class="bottone" type="submit">Avvisami</button>
+              </div>
+              <div class="trappola" aria-hidden="true">
+                <label>Non compilare <input name="sito" tabindex="-1" autocomplete="off" /></label>
+              </div>
+              <label class="consenso">
+                <input type="checkbox" name="consenso" required />
+                <span>Acconsento a ricevere email su Passo e ho letto l’<a href="privacy.html">informativa privacy</a>.</span>
+              </label>
+              <p class="esito" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="telefono">
+            <img
+              src="img/app-passi.png"
+              width="390"
+              height="844"
+              alt="Schermata dell’app: un compito diviso in quattro micro-passi da 2, 5, 10 e 5 minuti"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="sezione-alt" aria-labelledby="titolo-problema">
+        <div class="contenitore">
+          <div class="intestazione">
+            <span class="occhiello">Ti suona familiare?</span>
+            <h2 id="titolo-problema">Le app di produttività sono fatte per altri cervelli.</h2>
+            <p>Con l’ADHD il problema raramente è sapere cosa fare. È iniziare, ricordarsene e sentire il tempo che passa.</p>
+          </div>
+          <div class="griglia-3">
+            <article class="carta">
+              <div class="icona" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+              </div>
+              <h3>La lista diventa un muro</h3>
+              <p>Dieci cose tutte insieme non aiutano a iniziare: bloccano. E ogni giorno il muro si alza.</p>
+            </article>
+            <article class="carta">
+              <div class="icona" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21h4"/></svg>
+              </div>
+              <h3>Una notifica si ignora</h3>
+              <p>La scorri via in un secondo, con la migliore intenzione di farlo “dopo”. E il dopo non arriva.</p>
+            </article>
+            <article class="carta">
+              <div class="icona" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </div>
+              <h3>Il tempo sparisce</h3>
+              <p>“Cinque minuti” diventano un’ora, oppure un’attività da un’ora sembra infinita prima ancora di iniziarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="come-funziona" aria-labelledby="titolo-funziona">
+        <div class="contenitore">
+          <div class="intestazione">
+            <span class="occhiello">Come funziona</span>
+            <h2 id="titolo-funziona">Dal “devo farlo” al primo passo, in pochi secondi.</h2>
+          </div>
+
+          <div class="funzioni">
+            <div class="funzione">
+              <div class="testo-funzione">
+                <span class="numero">01 · Spezza-compiti</span>
+                <h3>Un compito intero blocca. Un passo da 2 minuti no.</h3>
+                <p>
+                  Scrivi o detta quello che devi fare. L’assistente lo divide in micro-passi concreti, ognuno con la sua
+                  durata. Il primo è sempre ridicolmente facile: serve solo a partire.
+                </p>
+                <ul>
+                  <li>Passi da 1 a 15 minuti, con un verbo d’azione chiaro</li>
+                  <li>Puoi modificarli, aggiungerli o rifarli quando vuoi</li>
+                  <li>Funziona anche offline, con una traccia di base</li>
+                </ul>
+              </div>
+              <div class="telefono">
+                <img src="img/app-oggi.png" width="390" height="844" alt="Schermata Oggi: tre priorità evidenziate e il resto della lista sotto" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="funzione">
+              <div class="testo-funzione">
+                <span class="numero">02 · Timer visivo</span>
+                <h3>Il tempo che passa, finalmente visibile.</h3>
+                <p>
+                  In modalità focus vedi un solo passo alla volta e un disco che si svuota. Niente altro sullo schermo.
+                  Hai bisogno di più tempo? Cinque minuti in più, senza drammi.
+                </p>
+                <ul>
+                  <li>Un passo per volta, a schermo intero</li>
+                  <li>Lo schermo resta acceso mentre lavori</li>
+                  <li>Una vibrazione quando il tempo è finito</li>
+                </ul>
+              </div>
+              <div class="telefono">
+                <img src="img/app-focus.png" width="390" height="844" alt="Modalità focus: il passo corrente in grande e un timer circolare" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="funzione">
+              <div class="testo-funzione">
+                <span class="numero">03 · Check-in</span>
+                <h3>La mattina scegli 3 cose. La sera guardi cosa hai fatto.</h3>
+                <p>
+                  Svuota la testa scrivendo tutto quello che ti gira in mente: Passo ti propone le 3 priorità del giorno,
+                  con il motivo. La sera, uno sguardo a cosa hai portato a termine. Il resto aspetta domani.
+                </p>
+                <ul>
+                  <li>Notifiche di check-in all’ora che scegli tu</li>
+                  <li>Messaggi letti ad alta voce, se vuoi</li>
+                </ul>
+              </div>
+              <div class="telefono">
+                <img src="img/app-checkin.png" width="390" height="844" alt="Check-in del mattino con le tre priorità proposte per la giornata" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="elenco-funzioni">
+            <div>
+              <p><strong>Promemoria insistenti</strong>Ti richiama ogni pochi minuti finché non rispondi: Fatto, Rimanda o Non oggi.</p>
+            </div>
+            <div>
+              <p><strong>Zero sensi di colpa</strong>Nessuna serie che si azzera, nessun numero rosso. Se salti un giorno, si riparte da adesso.</p>
+            </div>
+            <div>
+              <p><strong>I tuoi dati restano tuoi</strong>Niente account. I compiti stanno sul tuo telefono, non sui nostri server.</p>
+            </div>
+            <div>
+              <p><strong>Pensata in italiano</strong>Non una traduzione: tono, esempi e scadenze sono quelli della vita qui.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="metodo" class="sezione-scura" aria-labelledby="titolo-metodo">
+        <div class="contenitore">
+          <div class="intestazione">
+            <span class="occhiello">Il metodo</span>
+            <h2 id="titolo-metodo">Lavorare con il tuo cervello, non contro.</h2>
+            <p>Ogni scelta di Passo parte da come funzionano attenzione e motivazione quando c’è l’ADHD.</p>
+          </div>
+          <div class="principi">
+            <article class="carta">
+              <h3>Iniziare è la parte difficile</h3>
+              <p>Per questo il primo passo è sempre minuscolo. Una volta partiti, continuare è più facile.</p>
+            </article>
+            <article class="carta">
+              <h3>Fuori dalla vista, fuori dalla mente</h3>
+              <p>Un promemoria che si ignora non serve. Passo insiste, con gentilezza, finché non decidi tu.</p>
+            </article>
+            <article class="carta">
+              <h3>Il tempo va reso concreto</h3>
+              <p>Stime in minuti per ogni passo e un timer che si vede: il tempo diventa qualcosa che puoi guardare.</p>
+            </article>
+            <article class="carta">
+              <h3>La vergogna non motiva</h3>
+              <p>Niente punizioni né classifiche. Solo il prossimo passo, e un “fatto” quando ce la fai.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="titolo-prezzi">
+        <div class="contenitore">
+          <div class="intestazione">
+            <span class="occhiello">Prezzi</span>
+            <h2 id="titolo-prezzi">Gratis per iniziare.</h2>
+          </div>
+          <div class="prezzi">
+            <article class="carta">
+              <h3>Gratis</h3>
+              <p class="cifra">0 €</p>
+              <ul>
+                <li>Compiti, micro-passi e timer illimitati</li>
+                <li>Promemoria insistenti e check-in</li>
+                <li>Alcuni aiuti dell’assistente AI ogni giorno</li>
+              </ul>
+            </article>
+            <article class="carta in-evidenza">
+              <h3>Pro</h3>
+              <p class="cifra">In arrivo</p>
+              <ul>
+                <li>Assistente AI senza limiti giornalieri</li>
+                <li>Funzioni avanzate su routine e scadenze</li>
+                <li>Chi è in lista d’attesa avrà un prezzo di lancio</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="sezione-alt" aria-labelledby="titolo-faq">
+        <div class="contenitore">
+          <div class="intestazione">
+            <span class="occhiello">Domande</span>
+            <h2 id="titolo-faq">Domande frequenti</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Passo è uno strumento medico?</summary>
+              <p>
+                No. Passo è uno strumento di organizzazione: non fa diagnosi, non tratta l’ADHD e non sostituisce il parere
+                di un professionista sanitario. Può affiancare il percorso che stai già facendo.
+              </p>
+            </details>
+            <details>
+              <summary>Serve una diagnosi per usarla?</summary>
+              <p>No. Passo è pensata per l’ADHD, ma funziona per chiunque fatichi a iniziare le cose o a gestire il tempo.</p>
+            </details>
+            <details>
+              <summary>Dove finiscono i miei dati?</summary>
+              <p>
+                I tuoi compiti restano sul tuo telefono: non c’è un account e non li salviamo sui nostri server. Se usi
+                l’assistente AI, il testo del compito viene inviato al fornitore del modello solo per generare i passi e non
+                viene conservato da noi. Puoi spegnere l’AI quando vuoi. Trovi tutto nell’<a href="privacy.html">informativa privacy</a>.
+              </p>
+            </details>
+            <details>
+              <summary>Quando esce? Ci sarà anche per iPhone?</summary>
+              <p>
+                Passo arriva prima su Android, attraverso il Google Play Store. La versione per iPhone verrà dopo. Iscriviti
+                alla lista d’attesa per saperlo per primo.
+              </p>
+            </details>
+            <details>
+              <summary>Posso dettare invece di scrivere?</summary>
+              <p>Sì: in ogni campo puoi usare il microfono della tastiera del telefono per dettare compiti e pensieri.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-finale" aria-labelledby="titolo-cta">
+        <div class="contenitore">
+          <h2 id="titolo-cta">Il primo passo? Lasciare la tua email.</h2>
+          <p class="nota">Ti scriviamo solo quando Passo è pronta, e per il prezzo di lancio.</p>
+          <form class="iscrizione" data-lista-attesa data-origine="fondo" novalidate>
+            <div class="riga">
+              <input name="email" type="email" autocomplete="email" placeholder="la-tua@email.it" aria-label="Email" required />
+              <button class="bottone" type="submit">Avvisami</button>
+            </div>
+            <div class="trappola" aria-hidden="true">
+              <label>Non compilare <input name="sito" tabindex="-1" autocomplete="off" /></label>
+            </div>
+            <label class="consenso">
+              <input type="checkbox" name="consenso" required />
+              <span>Acconsento a ricevere email su Passo e ho letto l’<a href="privacy.html">informativa privacy</a>.</span>
+            </label>
+            <p class="esito" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="piede">
+      <div class="contenitore">
+        <div>
+          <p><strong>Passo</strong> · un passo alla volta · © <span id="anno">2026</span></p>
+          <p class="avvertenza">
+            Passo è uno strumento di organizzazione e non un dispositivo medico. Non fornisce diagnosi né trattamenti.
+          </p>
+        </div>
+        <nav aria-label="Note legali">
+          <a href="privacy.html">Privacy</a>
+          <a href="termini.html">Termini d’uso</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
