@@ -4,6 +4,8 @@ Assistente in italiano per adulti con ADHD: spezza i compiti in micro-passi con 
 
 > Passo è uno strumento di organizzazione, non un dispositivo medico.
 
+Progetto in comproprietà di **Sasha Estatico** (sviluppo) e **Francesca Estatico** (specialista in ADHD: metodo e contenuti).
+
 ## Cosa c’è in questo repository
 
 | Cartella | Cosa contiene | Tecnologia |

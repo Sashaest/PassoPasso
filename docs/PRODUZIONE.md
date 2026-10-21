@@ -6,10 +6,10 @@ Ordine consigliato: **0 → 1 → 2 → 3 → 4**. I passi 1–3 si possono fare
 
 - [ ] **Nome definitivo.** “Passo” è un nome di lavoro: verificare che non esista già su Play Store e che non ci siano marchi registrati simili (banca dati UIBM / EUIPO).
 - [ ] **ID del pacchetto Android** (`app/app.json` → `android.package`, ora `it.passo.adhd`). **Non si può cambiare dopo il primo caricamento** sul Play Store.
-- [ ] **Titolare e contatti**: nome o ditta, email per privacy e supporto. Vanno in `website/privacy.html` e `website/termini.html` (cerca `da-completare`).
+- [x] **Titolari e contatti**: Sasha Estatico e Francesca Estatico (contitolari), sashaestatico@gmail.com — già inseriti in privacy e termini. Far rivedere i due testi a un consulente.
 - [ ] **Fisco**: con un commercialista, partita IVA o prestazione occasionale quando l’app inizierà a incassare.
 - [ ] **Contratto di lavoro**: controllare clausole di esclusiva o non concorrenza.
-- [ ] **Accordo con la specialista** (ruoli, quote, uso del suo nome nel marketing), per iscritto.
+- [ ] **Accordo di comproprietà** tra Sasha e Francesca (quote, ruoli, decisioni, uso dei nomi nel marketing, cosa succede se uno dei due esce), per iscritto. Per il GDPR serve anche un breve accordo di contitolarità (art. 26).
 
 ## 1. Backend su AWS
 
@@ -45,7 +45,7 @@ Consigliato: un **AWS Budget** con avviso via email (es. 10 €/mese) e un limit
 ## 2. Sito web
 
 1. In `website/config.js` imposta `API_URL` con l’ApiUrl del passo 1.
-2. Completa privacy e termini (cerca `da-completare`) e falli rivedere a un consulente.
+2. Fai rivedere privacy e termini a un consulente.
 3. Su GitHub: **Settings → Pages → Source: GitHub Actions**. A ogni push su `main` che tocca `website/`, il workflow `sito.yml` pubblica il sito.
 4. Dominio (consigliato, serve anche come URL della privacy per il Play Store): aggiungi un file `website/CNAME` con il dominio e configura il DNS come indicato da GitHub. Poi aggiorna `AllowedOrigin` nel backend (`sam deploy` di nuovo).
 
