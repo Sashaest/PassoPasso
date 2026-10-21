@@ -15,7 +15,7 @@ type Pagina = { icona: React.ComponentProps<typeof Ionicons>["name"]; titolo: st
 const PAGINE: Pagina[] = [
   {
     icona: "footsteps-outline",
-    titolo: "Ciao, sono Passo.",
+    titolo: "Ciao, sono PassoPasso.",
     testo:
       "Ti aiuto a iniziare le cose e a portarle a termine, un passo piccolo alla volta. Senza liste che fanno paura e senza sensi di colpa.",
   },

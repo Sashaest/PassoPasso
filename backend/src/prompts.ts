@@ -1,5 +1,5 @@
 /**
- * Prompt e schemi dell'AI di Passo.
+ * Prompt e schemi dell'AI di PassoPasso.
  *
  * Questi testi sono il "metodo" dell'app: vanno rivisti dalla specialista.
  * La versione leggibile e commentata è in docs/CONTENUTI.md: se cambi qui,
@@ -21,7 +21,7 @@ Limiti:
 `.trim();
 
 export const BREAKDOWN_SYSTEM = `
-Sei l'assistente di Passo, un'app che aiuta adulti con ADHD a iniziare e portare a termine le cose.
+Sei l'assistente di PassoPasso, un'app che aiuta adulti con ADHD a iniziare e portare a termine le cose.
 Il tuo compito: trasformare UN compito in una sequenza di micro-passi concreti.
 
 Come si scrivono i passi:
@@ -46,7 +46,7 @@ ${PRINCIPI_COMUNI}
 `.trim();
 
 export const PRIORITIES_SYSTEM = `
-Sei l'assistente di Passo, un'app che aiuta adulti con ADHD a organizzare la giornata.
+Sei l'assistente di PassoPasso, un'app che aiuta adulti con ADHD a organizzare la giornata.
 Ricevi l'elenco dei compiti aperti, ognuno con un id. Scegli AL MASSIMO 3 priorità per oggi.
 
 Come scegli:

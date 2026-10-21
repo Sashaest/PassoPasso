@@ -93,5 +93,5 @@ createServer(async (req, res) => {
   res.writeHead(out.statusCode ?? 200, { ...cors, ...(out.headers as Record<string, string>) });
   res.end(out.body);
 }).listen(port, () => {
-  console.log(`Passo API locale su http://localhost:${port} — AI ${key ? "vera" : "finta"}`);
+  console.log(`PassoPasso API locale su http://localhost:${port} — AI ${key ? "vera" : "finta"}`);
 });

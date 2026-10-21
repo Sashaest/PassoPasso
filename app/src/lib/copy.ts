@@ -35,4 +35,4 @@ export function corpoPromemoria(indice: number, primoPasso?: string): string {
 }
 
 export const DISCLAIMER =
-  "Passo è uno strumento di organizzazione: non fa diagnosi e non sostituisce il parere di un professionista sanitario.";
+  "PassoPasso è uno strumento di organizzazione: non fa diagnosi e non sostituisce il parere di un professionista sanitario.";

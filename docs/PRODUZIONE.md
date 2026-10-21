@@ -4,8 +4,8 @@ Ordine consigliato: **0 → 1 → 2 → 3 → 4**. I passi 1–3 si possono fare
 
 ## 0. Decisioni da prendere prima
 
-- [ ] **Nome definitivo.** “Passo” è un nome di lavoro: verificare che non esista già su Play Store e che non ci siano marchi registrati simili (banca dati UIBM / EUIPO).
-- [ ] **ID del pacchetto Android** (`app/app.json` → `android.package`, ora `it.passo.adhd`). **Non si può cambiare dopo il primo caricamento** sul Play Store.
+- [ ] **Nome “PassoPasso”**: verificare che non esista già su Play Store e che non ci siano marchi registrati simili (banca dati UIBM / EUIPO).
+- [ ] **ID del pacchetto Android** (`app/app.json` → `android.package`, ora `it.passopasso.adhd`). **Non si può cambiare dopo il primo caricamento** sul Play Store.
 - [x] **Titolari e contatti**: Sasha Estatico e Francesca Estatico (contitolari), sashaestatico@gmail.com — già inseriti in privacy e termini. Far rivedere i due testi a un consulente.
 - [ ] **Fisco**: con un commercialista, partita IVA o prestazione occasionale quando l’app inizierà a incassare.
 - [ ] **Contratto di lavoro**: controllare clausole di esclusiva o non concorrenza.
@@ -71,7 +71,7 @@ npx eas-cli@latest build -p android --profile preview
 npx eas-cli@latest build -p android --profile production
 ```
 
-Prova sul telefono vero almeno: promemoria con app chiusa e pulsanti delle notifiche, check-in all’ora scelta, modalità “Non disturbare”, risparmio energetico (su alcuni telefoni, es. Xiaomi o Samsung, va escluso Passo dall’ottimizzazione batteria).
+Prova sul telefono vero almeno: promemoria con app chiusa e pulsanti delle notifiche, check-in all’ora scelta, modalità “Non disturbare”, risparmio energetico (su alcuni telefoni, es. Xiaomi o Samsung, va escluso PassoPasso dall’ottimizzazione batteria).
 
 > Le notifiche usano allarmi non esatti (nessun permesso `SCHEDULE_EXACT_ALARM`, che Google concede solo ad app sveglia e calendario): un promemoria può arrivare con qualche minuto di ritardo.
 
@@ -81,7 +81,7 @@ Prova sul telefono vero almeno: promemoria con app chiusa e pulsanti delle notif
 2. **Crea l’app**: lingua predefinita italiano, app gratuita.
 3. **Test chiuso** (obbligatorio per gli account personali creati dopo il 13/11/2023): **almeno 12 tester per 14 giorni consecutivi**. Carica l’AAB su una traccia di test chiuso e invita i tester con un Google Group o una lista di email. Solo dopo puoi chiedere l’accesso alla produzione.
 4. **Scheda dello store** (materiali pronti in `app/store/`):
-   - Titolo (max 30): `Passo: ADHD, un passo alla volta`
+   - Titolo (max 30): `PassoPasso: aiuto per l’ADHD`
    - Descrizione breve (max 80): `Compiti in micro-passi, promemoria insistenti e timer visivo. Per adulti con ADHD.`
    - Descrizione completa: vedi `app/store/descrizione.txt`
    - Icona 512×512: `app/assets/play-icon-512.png`
@@ -93,7 +93,7 @@ Prova sul telefono vero almeno: promemoria con app chiusa e pulsanti delle notif
    - Annunci: no.
    - Classificazione dei contenuti: questionario (nessun contenuto sensibile).
    - Pubblico di destinazione: **18+**.
-   - App per la salute: dichiarare onestamente la categoria; Passo è uno strumento di organizzazione e produttività, **non** un dispositivo medico (non fare promesse terapeutiche nella scheda).
+   - App per la salute: dichiarare onestamente la categoria; PassoPasso è uno strumento di organizzazione e produttività, **non** un dispositivo medico (non fare promesse terapeutiche nella scheda).
    - **Sicurezza dei dati** (Data safety), risposte coerenti con l’informativa:
      - Raccolta dati: **sì**, solo quando l’assistente AI è attivo.
      - “Altri contenuti generati dagli utenti” (testo dei compiti): raccolti, **non condivisi** per pubblicità, trattati in modo temporaneo, finalità *Funzionalità dell’app*, facoltativo (l’utente può spegnere l’AI).

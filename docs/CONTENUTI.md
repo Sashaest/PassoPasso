@@ -1,4 +1,4 @@
-# Il metodo di Passo — da rivedere con la specialista
+# Il metodo di PassoPasso — da rivedere con la specialista
 
 Questo documento spiega **come ragiona e come parla** l’app. È scritto per chi non programma: si può commentare e correggere liberamente. Le modifiche vanno poi riportate nel codice:
 
@@ -48,7 +48,7 @@ Incoraggiamento: *Il primo passo dura due minuti: basta aprire la pagina.*
 | Check-in sera, cose fatte | “Hai portato a termine N cose. Conta, tutte.” |
 | Check-in mattina | “Svuota la testa: scrivi o detta tutto quello che ti gira in testa. Una riga per ogni cosa.” |
 | Avviso limite AI | “Per oggi hai usato tutti gli aiuti AI gratuiti. Puoi sempre spezzare i compiti a mano: domani si riparte.” |
-| Disclaimer | “Passo è uno strumento di organizzazione: non fa diagnosi e non sostituisce il parere di un professionista sanitario.” |
+| Disclaimer | “PassoPasso è uno strumento di organizzazione: non fa diagnosi e non sostituisce il parere di un professionista sanitario.” |
 
 ## 4. Passi di base (senza AI)
 

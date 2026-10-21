@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Passo",
-    "slug": "passo",
+    "name": "PassoPasso",
+    "slug": "passopasso",
     "version": "0.1.0",
-    "scheme": "passo",
+    "scheme": "passopasso",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -14,7 +14,7 @@
       "backgroundColor": "#F7F4EE"
     },
     "android": {
-      "package": "it.passo.adhd",
+      "package": "it.passopasso.adhd",
       "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#F7F4EE",
@@ -34,7 +34,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "it.passo.adhd"
+      "bundleIdentifier": "it.passopasso.adhd"
     },
     "plugins": [
       "expo-router",

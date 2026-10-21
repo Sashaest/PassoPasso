@@ -1,16 +1,16 @@
-Passo è l’assistente in italiano per adulti con ADHD (e per chiunque faccia fatica a iniziare le cose). Ti aiuta a passare dal “devo farlo” al primo passo, senza liste che fanno paura e senza sensi di colpa.
+PassoPasso è l’assistente in italiano per adulti con ADHD (e per chiunque faccia fatica a iniziare le cose). Ti aiuta a passare dal “devo farlo” al primo passo, senza liste che fanno paura e senza sensi di colpa.
 
 UN COMPITO INTERO BLOCCA. UN PASSO DA 2 MINUTI NO.
 Scrivi o detta quello che devi fare: l’assistente lo divide in micro-passi concreti, ognuno con la sua durata. Il primo è sempre piccolissimo, perché iniziare è la parte difficile. Puoi modificare, aggiungere o rifare i passi quando vuoi.
 
 PROMEMORIA CHE NON SI POSSONO IGNORARE
-Attiva “Ricordamelo con insistenza”: Passo ti richiama ogni pochi minuti finché non rispondi. Dalla notifica scegli Fatto, Tra 10 minuti o Non oggi.
+Attiva “Ricordamelo con insistenza”: PassoPasso ti richiama ogni pochi minuti finché non rispondi. Dalla notifica scegli Fatto, Tra 10 minuti o Non oggi.
 
 IL TEMPO, FINALMENTE VISIBILE
 In modalità focus vedi un solo passo e un timer che si svuota. Lo schermo resta acceso, e se ti serve più tempo aggiungi 5 minuti.
 
 CHECK-IN MATTINA E SERA
-La mattina svuoti la testa e Passo ti propone le 3 priorità del giorno, con il motivo. La sera guardi cosa hai portato a termine. Il resto aspetta domani.
+La mattina svuoti la testa e PassoPasso ti propone le 3 priorità del giorno, con il motivo. La sera guardi cosa hai portato a termine. Il resto aspetta domani.
 
 ZERO SENSI DI COLPA
 Nessuna serie che si azzera, nessun numero rosso. Se salti un giorno, si riparte da adesso.
@@ -21,4 +21,4 @@ Niente account. I compiti restano sul tuo telefono. Se usi l’assistente AI, vi
 GRATIS PER INIZIARE
 Tutte le funzioni sono gratuite, con alcuni aiuti dell’assistente AI ogni giorno.
 
-Passo è uno strumento di organizzazione: non è un dispositivo medico, non fa diagnosi e non sostituisce il parere di un professionista sanitario.
+PassoPasso è uno strumento di organizzazione: non è un dispositivo medico, non fa diagnosi e non sostituisce il parere di un professionista sanitario.

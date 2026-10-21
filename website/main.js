@@ -1,4 +1,4 @@
-// Passo — sito: header che cambia allo scroll e iscrizione alla lista d'attesa.
+// PassoPasso — sito: header che cambia allo scroll e iscrizione alla lista d'attesa.
 (function () {
   "use strict";
 
@@ -54,7 +54,7 @@
         .then(function (r) {
           if (!r.ok) throw new Error(String(r.status));
           form.reset();
-          mostra("Fatto! Ti scriveremo quando Passo sarà pronta. Niente spam, promesso.", "ok");
+          mostra("Fatto! Ti scriveremo quando PassoPasso sarà pronta. Niente spam, promesso.", "ok");
         })
         .catch(function () {
           mostra("Non è andata a buon fine. Riprova tra poco.", "errore");

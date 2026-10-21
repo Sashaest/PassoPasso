@@ -1,8 +1,8 @@
-# Passo — un passo alla volta
+# PassoPasso — un passo alla volta
 
 Assistente in italiano per adulti con ADHD: spezza i compiti in micro-passi con l’AI, ricorda le cose con insistenza finché non rispondi, mostra il tempo con un timer visivo. Senza sensi di colpa.
 
-> Passo è uno strumento di organizzazione, non un dispositivo medico.
+> PassoPasso è uno strumento di organizzazione, non un dispositivo medico.
 
 Progetto in comproprietà di **Sasha Estatico** (sviluppo) e **Francesca Estatico** (specialista in ADHD: metodo e contenuti).
 

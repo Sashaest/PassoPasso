@@ -1,7 +1,7 @@
 {
   "name": "passo-backend",
   "version": "0.1.0",
-  "description": "Backend AI di Passo (AWS Lambda)",
+  "description": "Backend AI di PassoPasso (AWS Lambda)",
   "directories": {
     "test": "test"
   },

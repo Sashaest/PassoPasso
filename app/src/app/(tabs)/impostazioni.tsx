@@ -138,7 +138,7 @@ export default function ImpostazioniSchermo() {
           ])
         }
       />
-      <Text style={[testo.piccolo, { textAlign: "center", color: colori.testoTenue }]}>Passo · un passo alla volta</Text>
+      <Text style={[testo.piccolo, { textAlign: "center", color: colori.testoTenue }]}>PassoPasso · un passo alla volta</Text>
     </Schermo>
   );
 }
